@@ -16,7 +16,9 @@ window.addEventListener("load", function () {
                 <h3>${astronauts[i].firstName} ${astronauts[i].lastName}</h3>
                     <ul>
                         <li>Hours in space: ${astronauts[i].hoursInSpace}</li>
-                        <li>Active: ${astronauts[i].active}</li>
+
+                        <li ${astronauts[i].active ? 'style="color: green;"' : 'style="color: red;"'} >Active: ${astronauts[i].active}</li>
+        
                         <li>Skills: ${astronauts[i].skills}</li>
                     </ul>
             </div>
