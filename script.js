@@ -7,18 +7,23 @@ window.addEventListener("load", function () {
         .then(function (astronauts){
             let container = document.getElementById("container");
             container.innerHTML+= `
+            <h2>Number of Astronaunts on Mission: ${astronauts.length}</h2>\
+            `
+            for (let i=0; i<astronauts.length; i++) {
+            container.innerHTML+= `
             <div class="astronaut">
             <div class="bio">
-                <h3>${astronauts[0].firstName} ${astronauts[0].lastName}</h3>
+                <h3>${astronauts[i].firstName} ${astronauts[i].lastName}</h3>
                     <ul>
-                        <li>Hours in space: ${astronauts[0].hoursInSpace}</li>
-                        <li>Active: ${astronauts[0].active}</li>
-                        <li>Skills: ${astronauts[0].skills}</li>
+                        <li>Hours in space: ${astronauts[i].hoursInSpace}</li>
+                        <li>Active: ${astronauts[i].active}</li>
+                        <li>Skills: ${astronauts[i].skills}</li>
                     </ul>
             </div>
-            <img class="avatar" src="${astronauts[0].picture}">
+            <img class="avatar" src="${astronauts[i].picture}">
             </div>
-            `
+        
+            `   }
 
         })
 })
